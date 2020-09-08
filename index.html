@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=">
+	<link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Monoton&family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+	<title>Random Color Generator</title>
+</head>
+
+<body>
+	<div id='caption'></div>
+	<button onClick='randColor()'>Generate Color</button>
+</body>
+<script>
+  alert("click 'Generate Button' to start");
+let colors = [];
+let bdy = document.body;
+
+function randColor() {
+	colors[0] = Math.floor(Math.random() * 256);
+	colors[1] = Math.floor(Math.random() * 256);
+	colors[2] = Math.floor(Math.random() * 256);
+	const joinedColors = colors.join(",");
+	let color = "rgb(" + joinedColors + ")";
+	bdy.style.backgroundColor = color;
+	document.getElementById("caption").innerHTML = color;
+	console.log(color);
+}
+
+</script>
+</html>
